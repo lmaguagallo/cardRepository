@@ -14,6 +14,14 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
     }
 
+    public void FabricantePage_OnClick(View v) {
+        Intent FabricanteAccount;
+        FabricanteAccount = new Intent(this, FabricantePageActivity.class);
+        //inicar activity
+        startActivity(FabricanteAccount);
+
+    }
+
 
 
 }
