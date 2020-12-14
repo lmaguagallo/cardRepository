@@ -2,6 +2,7 @@ package com.example.cardalm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -81,6 +82,14 @@ public class FabricantePageActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "No se encontraron ningun registro!" , Toast.LENGTH_LONG).show();
         }
+    }
+
+    public void AllFabricantePage_OnClick(View v) {
+        Intent FabricanteAccount;
+        FabricanteAccount = new Intent(this, AllFabricanteActivity.class);
+        //inicar activity
+        startActivity(FabricanteAccount);
+
     }
 
 

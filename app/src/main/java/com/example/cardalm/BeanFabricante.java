@@ -4,6 +4,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.util.ArrayList;
+
 public class BeanFabricante {
 
     SQLiteHelperModel sqlhelper;
@@ -46,7 +48,7 @@ public class BeanFabricante {
 
     }
 
-    public Fabricante[] SelectAll() {
+    public Fabricante[] SelectAllFab() {
         Cursor c = db.rawQuery("SELECT * FROM vh_fabricante ORDER BY nombre_fabricante ",
                 null );
         if (c.getCount() > 0) {
@@ -55,9 +57,11 @@ public class BeanFabricante {
 
             while (c.moveToNext()){
                 Fabricante dta = new Fabricante();
+
                 dta.IdFabricante = c.getInt(0);
                 dta.NombreFabricante = c.getString(1);
                 dta.Pais = c.getString(2);
+
                 lst[i] = dta;
                 i++;
             }
@@ -66,6 +70,7 @@ public class BeanFabricante {
             return null;
         }
     }
+
 
     public Fabricante[] SelectByPais(String pais){
         pais = "%" + pais + "%";
@@ -151,7 +156,33 @@ public class BeanFabricante {
         }else {
             return null;
         }
+    }
 
+    public Vehiculo[] SelectAllVehiculos() {
+        Cursor c = db.rawQuery("SELECT * FROM vh_vehiculo ORDER BY marca ",
+                null );
+        if (c.getCount() > 0) {
+            Vehiculo[] vehiculoList = new Vehiculo[c.getCount()];
+            int i = 0;
+
+            while (c.moveToNext()){
+                Vehiculo vh = new Vehiculo();
+
+                vh.IdVehiculo = c.getInt(0);
+                vh.Marca = c.getString(1);
+                vh.IdFabricante = c.getInt(2);
+                vh.Modelo = c.getString(3);
+                vh.AnioVehiculo = c.getInt(4);
+                vh.Cilindraje = c.getInt(5);
+                vh.Combustible = c.getString(6);
+
+                vehiculoList[i] = vh;
+                i++;
+            }
+            return vehiculoList;
+        } else {
+            return null;
+        }
     }
 
 }

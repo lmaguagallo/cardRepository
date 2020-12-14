@@ -85,6 +85,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="120dp"
+        android:onClick="AllFabricantePage_OnClick"
         android:text="Lista de Fabricantes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
