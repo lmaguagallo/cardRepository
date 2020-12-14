@@ -33,7 +33,7 @@ public class AllVehiculosActivity extends AppCompatActivity {
         //Ocutar barra superior
         getSupportActionBar().hide();
         //Instanciar la tabla de vista
-        tbl_allVehiculos = findViewById(R.id.tbl_allVehiculos);
+        tbl_allVehiculos = findViewById(R.id.tbl_allUsers);
 
         // Instanciat clases
         beanF = new BeanFabricante(this);

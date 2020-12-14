@@ -2,6 +2,7 @@ package com.example.cardalm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -136,6 +137,14 @@ public class RegisterActivity2 extends AppCompatActivity {
         }else {
             Toast.makeText(this, "La busqueda se realiza por el USUARIO! ", Toast.LENGTH_LONG).show();
         }
+
+    }
+
+    public void AllUserPage_OnClick(View v) {
+        Intent AllUserAccount;
+        AllUserAccount = new Intent(this, AllUsersActivity.class);
+        //inicar activity
+        startActivity(AllUserAccount);
 
     }
 

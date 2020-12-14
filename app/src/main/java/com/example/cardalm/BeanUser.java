@@ -167,6 +167,29 @@ public class BeanUser {
         }
     }
 
+    public Usuario[] SelectAllUsuarios() {
+        Cursor c = db.rawQuery("SELECT * FROM vh_usuario ORDER BY id_user ",
+                null );
+
+        if (c.getCount() > 0) {
+            Usuario [] userList =  new Usuario[c.getCount()];
+            int i = 0;
+
+            while (c.moveToNext()) {
+                Usuario u = new Usuario();
+                u.Id = c.getInt(0);
+                u.Nombre = c.getString(1);
+                u.Usuario = c.getString(2);
+                u.Password = c.getString(3);
+                userList[i] = u;
+                i++;
+            }
+            return userList;
+        } else {
+            return null;
+        }
+    }
+
 
 
 
