@@ -22,6 +22,13 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
+    public void Register2Page_OnClick(View v) {
+        Intent RegisterAccount;
+        RegisterAccount = new Intent(this, RegisterActivity2.class);
+        //inicar activity
+        startActivity(RegisterAccount);
+    }
+
 
 
 }

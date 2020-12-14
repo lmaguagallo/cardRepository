@@ -88,7 +88,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:backgroundTint="#1F6155"
-        android:onClick="addUser_OnClick"
+        android:onClick="addUsers_Onclick"
         android:text="Registro"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"

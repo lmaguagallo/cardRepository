@@ -17,9 +17,9 @@ public class FabricantePageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fabricante_page);
 
-        txt_idF = findViewById(R.id.txt_idF);
-        txt_nombreF = findViewById(R.id.txt_nombreF);
-        txt_paisF = findViewById(R.id.txt_paisF);
+        txt_idF = findViewById(R.id.txt_nombreUser);
+        txt_nombreF = findViewById(R.id.txt_wordUser);
+        txt_paisF = findViewById(R.id.txt_passwUser);
 
         beanf = new BeanFabricante(this);
     }
@@ -80,5 +80,7 @@ public class FabricantePageActivity extends AppCompatActivity {
             Toast.makeText(this, "No se encontraron ningun registro!" , Toast.LENGTH_LONG).show();
         }
     }
+
+
 
 }
