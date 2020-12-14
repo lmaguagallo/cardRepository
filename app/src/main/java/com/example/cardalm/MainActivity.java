@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         txt_user = findViewById(R.id.txt_user);
         txt_passw = findViewById(R.id.txt_passw);
 
-        //beanu = new BeanUser(this);
+        beanu = new BeanUser(this);
 
     }
 
@@ -36,10 +36,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void MenuPagefromLogin_OnClick(View v) {
-        Intent menuAccount;
-        menuAccount = new Intent(this, MenuActivity.class);
-        //inicar activity
-        startActivity(menuAccount);
+
+        String user = txt_user.getText().toString();
+        String pass = txt_passw.getText().toString();
+
+        if (beanu.checkUsuario(user,pass)){
+            Intent menuAccount;
+            menuAccount = new Intent(this, MenuActivity.class);
+            //inicar activity
+            startActivity(menuAccount);
+        } else {
+            Toast.makeText(this, "Usuario o contraseña incorrectos! ", Toast.LENGTH_LONG).show();
+        }
 
     }
 
