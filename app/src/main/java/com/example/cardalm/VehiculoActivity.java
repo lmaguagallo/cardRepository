@@ -2,6 +2,7 @@ package com.example.cardalm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -127,6 +128,14 @@ public class VehiculoActivity extends AppCompatActivity {
         }else{
             Toast.makeText(this, "Campo de Id Vehiculo vacio!" , Toast.LENGTH_LONG).show();
         }
+    }
+
+    public void AllVehiculoPage_OnClick(View v) {
+        Intent VehiculoAccount;
+        VehiculoAccount = new Intent(this, AllVehiculosActivity.class);
+        //inicar activity
+        startActivity(VehiculoAccount);
+
     }
 
 }

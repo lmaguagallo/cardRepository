@@ -65,13 +65,23 @@ public class TableComponets {
         tableLayout.addView(tableRow);
     }
 
+    /**
+     * Método para crear filas y llenar de informacion
+     */
     private void CreateDataTable(){
         String info;
-        for(indexRow = 1; indexRow <= headers.length ; indexRow++){
+
+        // Creacion de Filas
+        for(indexRow = 1; indexRow <= data.size() ; indexRow++){
             newRow();
+            //Creacion celdas
             for(indexColumn = 0; indexColumn < headers.length; indexColumn++){
                 newCelda();
-                String[] i = data.get(indexRow - 1);
+                /**
+                 * Aqui extraemos el array y recorremos para poner en la celda
+                 * la informacion
+                 */
+                String[] i = data.get(indexRow-1);
                 info = (indexColumn < i.length) ? i[indexColumn]:"";
                 dataCelda.setText(info);
                 tableRow.addView(dataCelda, newTableRowParams());
@@ -79,6 +89,7 @@ public class TableComponets {
             tableLayout.addView(tableRow);
         }
     }
+
 
     private TableRow.LayoutParams newTableRowParams(){
         TableRow.LayoutParams params =  new TableRow.LayoutParams();

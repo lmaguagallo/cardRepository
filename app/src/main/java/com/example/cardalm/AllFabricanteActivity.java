@@ -33,7 +33,7 @@ public class AllFabricanteActivity extends AppCompatActivity {
         //Ocutar barra superior
         getSupportActionBar().hide();
         //Instanciar la tabla de vista
-        tbl_table = findViewById(R.id.tbl_table);
+        tbl_table = findViewById(R.id.tbl_allVehiculos);
 
         // Instanciat clases
         beanF = new BeanFabricante(this);
@@ -45,6 +45,7 @@ public class AllFabricanteActivity extends AppCompatActivity {
         //LLenar lista
         allFabricantes = beanF.SelectAllFab();
         if (allFabricantes != null){
+            //printFabricantes(allFabricantes);
             tableModel.addData(getAllFabricantes(allFabricantes));
         }else {
             Toast.makeText(this, "No hay datos ", Toast.LENGTH_LONG).show();
@@ -64,6 +65,16 @@ public class AllFabricanteActivity extends AppCompatActivity {
             });
         }
         return allRowFabricantes;
+    }
+
+    private void printFabricantes(Fabricante[] allFabricantes){
+        for(int i = 0; i < allFabricantes.length; i++){
+            System.out.println(
+                    allFabricantes[i].IdFabricante +" "+
+                    allFabricantes[i].NombreFabricante + " "+
+                    allFabricantes[i].Pais
+            );
+        }
     }
 
 

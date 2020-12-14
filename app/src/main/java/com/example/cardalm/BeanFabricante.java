@@ -49,7 +49,7 @@ public class BeanFabricante {
     }
 
     public Fabricante[] SelectAllFab() {
-        Cursor c = db.rawQuery("SELECT * FROM vh_fabricante ORDER BY nombre_fabricante ",
+        Cursor c = db.rawQuery("SELECT * FROM vh_fabricante ORDER BY id_fabricante ",
                 null );
         if (c.getCount() > 0) {
             Fabricante [] lst = new Fabricante[c.getCount()];
@@ -159,7 +159,7 @@ public class BeanFabricante {
     }
 
     public Vehiculo[] SelectAllVehiculos() {
-        Cursor c = db.rawQuery("SELECT * FROM vh_vehiculo ORDER BY marca ",
+        Cursor c = db.rawQuery("SELECT * FROM vh_vehiculo ORDER BY id_vehiculo ",
                 null );
         if (c.getCount() > 0) {
             Vehiculo[] vehiculoList = new Vehiculo[c.getCount()];
