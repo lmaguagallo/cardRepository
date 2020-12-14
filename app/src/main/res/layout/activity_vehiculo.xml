@@ -4,45 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FabricantePageActivity">
+    tools:context=".VehiculoActivity">
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Nuevo Fabricante "
-        android:textSize="10sp"
+        android:layout_marginTop="4dp"
+        android:text="Nuevo Vehiculo"
+        android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_allUser" />
 
     <Button
-        android:id="@+id/btn_newVeh"
+        android:id="@+id/btn_selectVh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
-        android:onClick="addFab_OnClick"
-        android:text="Ingresar"
         android:backgroundTint="#1F6155"
+        android:onClick="selectOneVehiculo_Onclick"
+        android:text="Buscar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_modelo" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_deleteVh" />
 
     <Button
         android:id="@+id/btn_updateVh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="4dp"
         android:layout_marginEnd="24dp"
-        android:onClick="updateFab_Onclick"
-        android:text="Actualizar"
         android:backgroundTint="#1F6155"
+        android:onClick="updateVehiculo_OnClick"
+        android:text="Actualizar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,30 +51,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="4dp"
         android:layout_marginEnd="24dp"
-        android:onClick="deleteFab_onclick"
-        android:text="Eliminar"
         android:backgroundTint="#1F6155"
+        android:onClick="deleteVeehiculo_onclick"
+        android:text="Eliminar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_updateVh" />
 
     <Button
-        android:id="@+id/btn_selectVh"
+        android:id="@+id/btn_newVeh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="24dp"
-        android:onClick="selectOne_Onclick"
-        android:text="Buscar"
         android:backgroundTint="#1F6155"
+        android:onClick="addVehiculo_OnClick"
+        android:text="Ingresar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_deleteVh" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_comb" />
 
     <Button
         android:id="@+id/btn_allUser"
@@ -85,7 +82,8 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="120dp"
-        android:text="Lista de Fabricantes"
+        android:backgroundTint="#1F6155"
+        android:text="Lista Vehiculos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,27 +91,35 @@
 
     <EditText
         android:id="@+id/txt_idVehiculo"
-        android:layout_width="match_parent"
+        android:layout_width="135dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="24dp"
         android:ems="10"
-        android:hint="Id Fabricante"
+        android:hint="Id Vehiculo"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <EditText
+        android:id="@+id/txt_cilin"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:ems="10"
+        android:hint="Cilindraje"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_anio" />
 
     <EditText
         android:id="@+id/txt_marca"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="4dp"
         android:layout_marginEnd="24dp"
         android:ems="10"
-        android:hint="Nombre Fabricante"
+        android:hint="Marca"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -125,14 +131,55 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="4dp"
         android:layout_marginEnd="24dp"
         android:ems="10"
-        android:hint="Pais"
+        android:hint="Modelo "
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_marca" />
+
+    <EditText
+        android:id="@+id/txt_anio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:hint="Año"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_modelo" />
+
+    <EditText
+        android:id="@+id/txt_idFab"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:hint="Id Fabricante"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txt_idVehiculo"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <EditText
+        android:id="@+id/txt_comb"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:hint="Combustible"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toEndOf="@+id/txt_idVehiculo"
+        app:layout_constraintTop_toBottomOf="@+id/txt_anio" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

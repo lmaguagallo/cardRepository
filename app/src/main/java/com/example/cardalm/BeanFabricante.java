@@ -14,12 +14,6 @@ public class BeanFabricante {
         db = sqlhelper.getWritableDatabase();
     }
 
-    public void AddUser(String nombre, String userr, String pssw) {
-        db.execSQL("INSERT INTO vh_usuario(user_name,user_word,user_password) VALUES (?,?,?)",
-                new Object[] {nombre,userr,pssw} );
-    }
-
-
     public void Add(int id_fabricante, String nombre_fabricante, String pais) {
         db.execSQL("INSERT INTO vh_fabricante(id_fabricante, nombre_fabricante,pais) VALUES (?,?,?)",
                 new Object[] {id_fabricante,nombre_fabricante,pais} );
@@ -118,4 +112,46 @@ public class BeanFabricante {
             return null;
         }
     }
+
+
+    public void AddVehiculos(int idvehiculo, String marcaVehiculo, int idFabricante,
+                             String modeloVehiculo, int anioVehiculo, int cilindrajeVh, String combustibleVh) {
+        db.execSQL("INSERT INTO vh_vehiculo(id_vehiculo, marca,id_fabricante,modelo,anio,cilindraje,id_tipo_combustible) VALUES (?,?,?,?,?,?,?)",
+                new Object[] {idvehiculo,marcaVehiculo,idFabricante,modeloVehiculo,anioVehiculo,cilindrajeVh,combustibleVh} );
+    }
+
+    public void UpdateVehiculos(int idvehiculo, String marcaVehiculo, int idFabricante,
+                             String modeloVehiculo, int anioVehiculo, int cilindrajeVh, String combustibleVh) {
+        db.execSQL("UPDATE vh_vehiculo SET  marca = ?,id_fabricante = ?,modelo = ?,anio = ?," +
+                        "cilindraje = ?,id_tipo_combustible = ? WHERE id_vehiculo = ?",
+                new Object[] {idvehiculo,marcaVehiculo,idFabricante,modeloVehiculo,anioVehiculo,cilindrajeVh,combustibleVh} );
+    }
+
+    public void DeleteVehiculo (int idvehiculo){
+        db.execSQL("DELETE FROM vh_vehiculo WHERE id_vehiculo = ?",
+                new Object[] {idvehiculo} );
+    }
+
+    public Vehiculo SelectOneVehiculo(int idvehiculo) {
+        Vehiculo vh = new Vehiculo();
+        Cursor c = db.rawQuery("SELECT * FROM vh_vehiculo WHERE id_vehiculo = " + idvehiculo,
+                null );
+
+        // c.moveToFirst() -> Dice que se mueva  ala primera fila de la consulta
+        if (c.moveToFirst() ) {
+            vh.IdVehiculo = c.getInt(0);
+            vh.Marca = c.getString(1);
+            vh.IdFabricante = c.getInt(2);
+            vh.Modelo = c.getString(3);
+            vh.AnioVehiculo = c.getInt(4);
+            vh.Cilindraje = c.getInt(5);
+            vh.Combustible = c.getString(6);
+
+            return vh;
+        }else {
+            return null;
+        }
+
+    }
+
 }

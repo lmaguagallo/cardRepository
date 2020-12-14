@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Ocutar barra superior
+        getSupportActionBar().hide();
         txt_user = findViewById(R.id.txt_user);
         txt_passw = findViewById(R.id.txt_passw);
 

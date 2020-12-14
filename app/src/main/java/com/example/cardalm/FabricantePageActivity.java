@@ -17,9 +17,11 @@ public class FabricantePageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fabricante_page);
 
-        txt_idF = findViewById(R.id.txt_nombreUser);
-        txt_nombreF = findViewById(R.id.txt_wordUser);
-        txt_paisF = findViewById(R.id.txt_passwUser);
+        //Ocutar barra superior
+        getSupportActionBar().hide();
+        txt_idF = findViewById(R.id.txt_idVehiculo);
+        txt_nombreF = findViewById(R.id.txt_marca);
+        txt_paisF = findViewById(R.id.txt_modelo);
 
         beanf = new BeanFabricante(this);
     }

@@ -19,7 +19,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_allUser" />
 
     <Button
-        android:id="@+id/btn_newFab"
+        android:id="@+id/btn_newVeh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -31,10 +31,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_passwUser" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_modelo" />
 
     <Button
-        android:id="@+id/btn_update"
+        android:id="@+id/btn_updateVh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -46,10 +46,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_newFab" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_newVeh" />
 
     <Button
-        android:id="@+id/btn_delete"
+        android:id="@+id/btn_deleteVh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -61,10 +61,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_update" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_updateVh" />
 
     <Button
-        android:id="@+id/btn_select"
+        android:id="@+id/btn_selectVh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -76,7 +76,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_delete" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_deleteVh" />
 
     <Button
         android:id="@+id/btn_allUser"
@@ -93,7 +93,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/txt_nombreUser"
+        android:id="@+id/txt_idVehiculo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -107,7 +107,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <EditText
-        android:id="@+id/txt_wordUser"
+        android:id="@+id/txt_marca"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -119,10 +119,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_nombreUser" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_idVehiculo" />
 
     <EditText
-        android:id="@+id/txt_passwUser"
+        android:id="@+id/txt_modelo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -134,6 +134,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_wordUser" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_marca" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

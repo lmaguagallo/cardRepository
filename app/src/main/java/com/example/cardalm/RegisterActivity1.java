@@ -18,6 +18,8 @@ public class RegisterActivity1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register1);
 
+        //Ocutar barra superior
+        getSupportActionBar().hide();
         txt_iNombre = findViewById(R.id.txt_iNombre);
         txt_iUser = findViewById(R.id.txt_iUser);
         txt_iPassw = findViewById(R.id.txt_iPassw);

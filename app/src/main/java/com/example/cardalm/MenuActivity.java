@@ -12,6 +12,9 @@ public class MenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+        //Ocutar barra superior
+        getSupportActionBar().hide();
     }
 
     public void FabricantePage_OnClick(View v) {
@@ -27,6 +30,13 @@ public class MenuActivity extends AppCompatActivity {
         RegisterAccount = new Intent(this, RegisterActivity2.class);
         //inicar activity
         startActivity(RegisterAccount);
+    }
+
+    public void VehiculoPage_OnClick(View v) {
+        Intent VehiculoAccount;
+        VehiculoAccount = new Intent(this, VehiculoActivity.class);
+        //inicar activity
+        startActivity(VehiculoAccount);
     }
 
 

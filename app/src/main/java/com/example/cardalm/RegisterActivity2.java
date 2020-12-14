@@ -19,10 +19,12 @@ public class RegisterActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register2);
 
+        //Ocutar barra superior
+        getSupportActionBar().hide();
         // Instaciar componentes
-        txt_nombreUser = findViewById(R.id.txt_nombreUser);
-        txt_wordUser = findViewById(R.id.txt_wordUser);
-        txt_passwUser = findViewById(R.id.txt_passwUser);
+        txt_nombreUser = findViewById(R.id.txt_idVehiculo);
+        txt_wordUser = findViewById(R.id.txt_marca);
+        txt_passwUser = findViewById(R.id.txt_modelo);
 
         user = new Usuario();
         beanu = new BeanUser(this);
